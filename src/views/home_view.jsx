@@ -1,6 +1,36 @@
 import Grid from "@mui/material/Grid";
-
 function Home_View() {
+  window.onload = (e) => { 
+    // Declare init HTML elements
+    const buttonAdd = document.querySelector('#buttonAdd');
+  
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+    });
+  
+    // Add event click function for Add button
+    buttonAdd.addEventListener('click', (e) => {
+      // Show the prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice
+        .then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+    });
+  }
+  if('serviceWorker' in navigator) {
+    console.log('serviceWorker');
+    }
   return (
     <>
       <Grid container spacing={1}>
@@ -23,8 +53,8 @@ function Home_View() {
             4-Bb lips <br />
             5-Dermapen <br />
             6-Tratamiento cicatricure <br />
-            7-Tratamientos(labios,acnés,ojera,minimizador de
-            poros,flacidez,hidratación,relajación)
+            7-Tratamientos(labios, acnés, ojera, minimizador de poros, flacidez,
+            hidratación, relajación)
           </p>
           <h3>
             <code>🌺🌺CORPORALES🌺🌺</code>
@@ -33,10 +63,10 @@ function Home_View() {
             1-Tratamiento reductor de grasa <br />
             2-Alta frecuencia capilar <br />
             3-Tratamiento reductor de estrías <br />
-            4-Tratamiento aclaración de zonas (cuello,axila,entre
-            piernas,codos,tobillos,rodillas) <br />
-            5-Depilación láser(bigote,barbilla,rostro completo,ombligo,línea del
-            bikini,pecho,espalda,bikini,brazos,piernas) <br />
+            4-Tratamiento aclaración de zonas (cuello, axila, entre piernas,
+            codos, tobillos, rodillas) <br />
+            5-Depilación láser(bigote, barbilla, rostro completo, ombligo, línea
+            del bikini, pecho, espalda, bikini, brazos, piernas) <br />
             6-Masajes
           </p>
           <h3>
@@ -60,7 +90,7 @@ function Home_View() {
             7-Extensiones Y más
           </p>
           <h3>
-            <code>🌺🌺OTROS SERVICIOS QUE SE OFRECEN🌺🌺</code>
+            <code>🌺🌺OTROS SERVICIOS🌺🌺</code>
           </h3>
           <p>
             1-Puestas de pestañas y depilación de cejas <br />
