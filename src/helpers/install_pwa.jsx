@@ -59,7 +59,7 @@ function Install_PWA() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={(e) => downloadApp} autoFocus>
+            <Button onClick={(e) => downloadApp()} autoFocus>
               Instalar
             </Button>
             <Button onClick={(e) => setOpenDialog(false)}>No Instalar</Button>
