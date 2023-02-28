@@ -4,11 +4,11 @@ function Home_View() {
   return (
     <>
       <Grid container spacing={1}>
-        <Grid item xs={3}></Grid>
-        <Grid item xs={6}>
+        <Grid item xs={2}></Grid>
+        <Grid item xs={8}>
           <img src="/AteneaSPA.png" className="logo" alt="logo" />
         </Grid>
-        <Grid item xs={3}></Grid>
+        <Grid item xs={2}></Grid>
         <Grid item xs={12}>
           <h1>Bienvenida en AteneaSpa les brindamos los siguientes servicios:</h1>
           <h3>
