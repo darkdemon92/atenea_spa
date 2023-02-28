@@ -10,7 +10,9 @@ function Home_View() {
         </Grid>
         <Grid item xs={2}></Grid>
         <Grid item xs={12}>
-          <h1>Bienvenida en AteneaSpa les brindamos los siguientes servicios:</h1>
+          <h1>
+            Bienvenida en AteneaSpa les brindamos los siguientes servicios:
+          </h1>
           <h3>
             <code>🌺🌺FACIALES🌺🌺</code>
           </h3>
