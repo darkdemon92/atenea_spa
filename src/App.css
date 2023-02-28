@@ -1,0 +1,18 @@
+:root {
+  background-color: rgb(234, 219, 245);
+  color: rgb(10, 9, 10);
+}
+.logo {
+  width: 100%;
+  margin-top: 0em;
+  padding: 0em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgb(250, 3, 196));
+}
+
+
+
+
