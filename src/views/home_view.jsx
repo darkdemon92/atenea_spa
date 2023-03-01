@@ -5,13 +5,17 @@ function Home_View() {
   return (
     <>
       <Install_PWA />
-      <Grid container spacing={1}>
-        <Grid item xs={2}></Grid>
-        <Grid item xs={8}>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
+        <Grid item xs={0.5} sm={1} md={2}></Grid>
+        <Grid item xs={3} sm={6} md={8}>
           <img src="/AteneaSPA.webp" className="logo" alt="logo" />
         </Grid>
-        <Grid item xs={2}></Grid>
-        <Grid item xs={12}>
+        <Grid item xs={0.5} sm={1} md={2}></Grid>
+        <Grid item xs={4} sm={8} md={12}>
           <h1>
             Bienvenida en AteneaSpa les brindamos los siguientes servicios:
           </h1>

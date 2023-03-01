@@ -5,6 +5,10 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import DownloadingSharpIcon from "@mui/icons-material/DownloadingSharp";
+import DoDisturbSharpIcon from "@mui/icons-material/DoDisturbSharp";
+import Grid from "@mui/material/Grid";
+import Alert from "@mui/material/Alert";
 
 function Install_PWA() {
   const [isReadyForInstall, setIsReadyForInstall] = useState(false);
@@ -42,29 +46,26 @@ function Install_PWA() {
   return (
     <>
       {isReadyForInstall && (
-        <Dialog
-          open={OpenDialog}
-          onClose={(e) => setOpenDialog(true)}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">
-            {"Instalar como una APP Móvil?"}
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
+        <>
+          <Alert variant="filled" severity="info">
+            <p>
               Para una mejor experiencia de usuario le recomendamos que instale
               como una APP Móvil. De hacerlo podrá en lo adelante acceder por el
               acceso directo que se creará en la pantalla de inicio del móvil.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={(e) => downloadApp()} autoFocus>
+            </p>
+            <Button
+              size="small"
+              variant="contained"
+              color="success"
+              endIcon={<DownloadingSharpIcon />}
+              onClick={(e) => downloadApp()}
+              autoFocus
+            >
               Instalar
             </Button>
-            <Button onClick={(e) => setOpenDialog(false)}>No Instalar</Button>
-          </DialogActions>
-        </Dialog>
+          </Alert>{" "}
+          <br />
+        </>
       )}
     </>
   );
