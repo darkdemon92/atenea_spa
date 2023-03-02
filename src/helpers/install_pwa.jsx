@@ -1,18 +1,10 @@
 import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import DownloadingSharpIcon from "@mui/icons-material/DownloadingSharp";
-import DoDisturbSharpIcon from "@mui/icons-material/DoDisturbSharp";
-import Grid from "@mui/material/Grid";
 import Alert from "@mui/material/Alert";
 
 function Install_PWA() {
   const [isReadyForInstall, setIsReadyForInstall] = useState(false);
-  const [OpenDialog, setOpenDialog] = useState(true);
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (event) => {
       // Prevent the mini-infobar from appearing on mobile.
@@ -35,7 +27,7 @@ function Install_PWA() {
     // Show the install prompt.
     promptEvent.prompt();
     // Log the result
-    const result = await promptEvent.userChoice;
+    //const result = await promptEvent.userChoice;
     //console.log("👍", "userChoice", result);
     // Reset the deferred prompt variable, since
     // prompt() can only be called once.
@@ -58,7 +50,7 @@ function Install_PWA() {
               variant="contained"
               color="success"
               endIcon={<DownloadingSharpIcon />}
-              onClick={(e) => downloadApp()}
+              onClick={() => downloadApp()}
               autoFocus
             >
               Instalar

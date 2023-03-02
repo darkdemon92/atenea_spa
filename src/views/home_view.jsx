@@ -1,5 +1,7 @@
+import { lazy } from "react";
 import Grid from "@mui/material/Grid";
-import Install_PWA from "../helpers/install_pwa";
+const Install_PWA = lazy(() => import('../helpers/install_pwa'));
+//import Install_PWA from "../helpers/install_pwa";
 
 function Home_View() {
   return (
@@ -16,9 +18,9 @@ function Home_View() {
         </Grid>
         <Grid item xs={0.5} sm={1} md={2}></Grid>
         <Grid item xs={4} sm={8} md={12}>
-          <h1>
+          <h2>
             Bienvenida en AteneaSpa les brindamos los siguientes servicios:
-          </h1>
+          </h2>
           <h3>
             <code>🌺🌺FACIALES🌺🌺</code>
           </h3>
