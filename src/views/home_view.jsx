@@ -1,5 +1,8 @@
+import { lazy } from "react";
 import Grid from "@mui/material/Grid";
-import Install_PWA from "../helpers/install_pwa";
+const Install_PWA = lazy(() => import('../helpers/install_pwa'));
+//import Install_PWA from "../helpers/install_pwa";
+
 
 function Home_View() {
   return (
